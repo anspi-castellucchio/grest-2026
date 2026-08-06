@@ -92,11 +92,7 @@
   .slot { display:flex; gap:12px; padding:6px 0; border-bottom:1px solid rgba(8,112,183,0.1); font-size:15px; }
   .slot:last-child { border-bottom:none; }
   .slot .ora { font-weight:700; color:var(--blu); min-width:110px; }
-
-  .gita-avviso {
-    font-family:'Nunito',sans-serif; font-weight:800; font-size:17px;
-    color:var(--blu-scuro); margin-top:16px; text-align:center;
-  }
+  .gita-avviso { font-family:'Nunito',sans-serif; font-weight:800; font-size:17px; color:var(--blu-scuro); margin-top:16px; text-align:center; }
 
   .field-group { margin-bottom:18px; }
   .field-group label { display:block; font-size:14px; font-weight:700; color:var(--testo-sec); margin-bottom:5px; text-transform:uppercase; letter-spacing:0.4px; }
@@ -133,7 +129,6 @@
   .alert.show-info    { display:block; background:var(--blu-pallido); color:var(--blu-scuro); border-left:4px solid var(--blu); }
   .alert.show-success { display:block; background:#E8F5E9; color:var(--verde); border-left:4px solid var(--verde); }
   .alert.show-error   { display:block; background:#FFEBEE; color:var(--rosso); border-left:4px solid var(--rosso); }
-  .alert.show-warning { display:block; background:#FFF8E1; color:#E65100; border-left:4px solid #FF9800; }
 
   .badge-ruolo {
     border-radius: var(--raggio-sm); padding: 13px 16px;
@@ -146,41 +141,54 @@
   .sezione-label { font-family:'Nunito',sans-serif; font-weight:800; font-size:17px; color:var(--blu-scuro); margin:22px 0 14px; padding-bottom:8px; border-bottom:2px solid var(--blu-pallido); display:flex; align-items:center; gap:8px; }
   .sezione-icona { width:28px; height:28px; background:var(--blu); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--bianco); font-size:14px; font-weight:900; flex-shrink:0; }
 
+  /* ── SETTIMANE ── */
   .settimana-opt {
     border:2px solid var(--grigio-bordo); border-radius:var(--raggio-sm);
-    padding:16px; margin-bottom:10px; cursor:pointer;
+    padding:16px; margin-bottom:10px;
     transition:border-color 0.2s, background 0.2s;
-    display:flex; align-items:flex-start; gap:12px;
+    display:flex; align-items:flex-start; gap:12px; cursor:pointer;
   }
   .settimana-opt:hover { border-color:var(--blu-chiaro); }
   .settimana-opt.selezionata { border-color:var(--blu); background:var(--blu-pallido); }
-  .settimana-opt input[type="checkbox"] { width:20px; height:20px; min-width:20px; accent-color:var(--blu); margin-top:2px; }
+  .settimana-opt input[type="checkbox"] { width:22px; height:22px; min-width:22px; accent-color:var(--blu); margin-top:2px; cursor:pointer; }
   .settimana-opt .sett-info { flex:1; }
   .settimana-opt .sett-titolo { font-weight:700; font-size:16px; margin-bottom:2px; }
   .settimana-opt .sett-date { font-size:14px; color:var(--testo-sec); }
   .settimana-opt .sett-costo { font-size:14px; font-weight:700; color:var(--blu); margin-top:4px; }
 
-  .gita-opt {
+  /* ── GITE ── */
+  .gita-card {
     border:2px solid var(--grigio-bordo); border-radius:var(--raggio-sm);
-    padding:16px; margin-bottom:10px;
-    display:flex; align-items:flex-start; gap:12px;
-    transition:border-color 0.2s, background 0.2s;
+    padding:16px; margin-bottom:14px;
+    transition:border-color 0.2s;
   }
-  .gita-opt.selezionata { border-color:var(--arancio); background:#FFF8E1; }
-  .gita-opt input[type="checkbox"] { width:20px; height:20px; min-width:20px; accent-color:var(--arancio); margin-top:2px; }
-  .gita-opt .gita-info { flex:1; }
-  .gita-opt .gita-titolo { font-weight:700; font-size:16px; margin-bottom:2px; }
-  .gita-opt .gita-desc { font-size:14px; color:var(--testo-sec); line-height:1.5; }
-  .gita-opt .gita-costo { font-size:14px; font-weight:700; color:var(--arancio-scuro); margin-top:4px; }
+  .gita-card.selezionata-si    { border-color:var(--verde); background:#f1f8f2; }
+  .gita-card.selezionata-forse { border-color:#FF9800; background:#FFF8E1; }
+  .gita-card.selezionata-no    { border-color:var(--grigio-bordo); background:var(--grigio); }
+  .gita-titolo { font-weight:700; font-size:16px; margin-bottom:4px; }
+  .gita-desc { font-size:14px; color:var(--testo-sec); line-height:1.5; margin-bottom:12px; }
+  .gita-costo { font-size:14px; font-weight:700; color:var(--arancio-scuro); margin-bottom:12px; }
+  .gita-radio-group { display:flex; gap:8px; flex-wrap:wrap; }
+  .gita-radio-opt {
+    display:flex; align-items:center; gap:8px;
+    background:var(--grigio); border:2px solid var(--grigio-bordo);
+    border-radius:var(--raggio-sm); padding:10px 14px;
+    cursor:pointer; transition:border-color 0.2s, background 0.2s;
+    font-size:15px; font-weight:600;
+  }
+  .gita-radio-opt:hover { border-color:var(--blu-chiaro); }
+  .gita-radio-opt input[type="radio"] { width:18px; height:18px; accent-color:var(--blu); }
+  .gita-radio-opt.opt-si    { }
+  .gita-radio-opt.opt-forse { }
+  .gita-radio-opt.opt-no    { }
 
-  .riepilogo-costo {
-    background:var(--blu-pallido); border-radius:var(--raggio-sm);
-    padding:16px; margin-top:16px;
-  }
+  /* ── RIEPILOGO COSTO ── */
+  .riepilogo-costo { background:var(--blu-pallido); border-radius:var(--raggio-sm); padding:16px; margin-top:16px; }
   .riepilogo-costo h3 { font-family:'Nunito',sans-serif; font-weight:800; font-size:15px; color:var(--blu-scuro); margin-bottom:10px; text-transform:uppercase; }
   .costo-riga { display:flex; justify-content:space-between; font-size:15px; padding:4px 0; }
   .costo-riga.totale { font-weight:700; font-size:17px; border-top:2px solid var(--blu); margin-top:6px; padding-top:8px; color:var(--blu-scuro); }
 
+  /* ── CLAUSOLE ── */
   .clausola { background:var(--grigio); border:2px solid var(--grigio-bordo); border-radius:var(--raggio-sm); padding:18px; margin-bottom:14px; transition:border-color 0.2s, background 0.2s; }
   .clausola.accettata { border-color:var(--verde); background:#f1f8f2; }
   .clausola-testo { font-size:15px; line-height:1.7; color:var(--testo); margin-bottom:14px; }
@@ -240,13 +248,14 @@
     .card { padding:18px; }
     .btn-wrap { flex-direction:column-reverse; }
     .btn-primario, .btn-sec { max-width:100%; width:100%; }
+    .gita-radio-group { flex-direction:column; }
   }
 </style>
 </head>
 <body>
 
 <div class="header">
-<img class="logo-anspi" src="ANSPI%20Castellucchio%20_%20Logo%404x.png" alt="Logo ANSPI Castellucchio">
+  <img class="logo-anspi" src="ANSPI%20Castellucchio%20_%20Logo%404x.png" alt="Logo ANSPI Castellucchio">
   <div class="header-intestazione">
     Associazione Santa Chiara e San Francesco ANSPI – APS ETS<br>
     Via Roma 29 – 46014 Castellucchio MN &nbsp;|&nbsp; Tel. 0376 438106 &nbsp;|&nbsp; CF 93067410204
@@ -317,7 +326,7 @@
   <!-- STEP 1: CODICE FISCALE -->
   <div id="step1" class="card" style="display:none;">
     <div class="card-titolo">Codice Fiscale</div>
-    <div class="card-sottotitolo">Inserisci il codice fiscale del/la partecipante. Verificheremo se sono già presenti dati nel nostro archivio e determineremo il ruolo (Partecipante o Animatore).</div>
+    <div class="card-sottotitolo">Inserisci il codice fiscale del/la partecipante. Verificheremo i dati nel nostro archivio e determineremo il ruolo (Partecipante o Animatore).</div>
     <div id="alertCF" class="alert"></div>
     <div id="badgeRuolo" class="badge-ruolo"></div>
     <div class="field-group">
@@ -449,50 +458,70 @@
   <!-- STEP 3: SETTIMANE E GITE -->
   <div id="step3" class="card" style="display:none;">
     <div class="card-titolo">Settimane e Gite</div>
-    <div class="card-sottotitolo">Seleziona le settimane di partecipazione e le gite a cui parteciperà.</div>
+    <div class="card-sottotitolo">Seleziona le settimane di partecipazione e indica la disponibilità per le gite.</div>
 
     <div class="sezione-label"><div class="sezione-icona">1</div>Settimane</div>
-    <label class="settimana-opt" id="optSett1" onclick="aggiornaSett('sett1',this)">
-      <input type="checkbox" id="sett1" onchange="aggiornaRiepilogoCosto()">
+
+    <div class="settimana-opt" id="optSett1">
+      <input type="checkbox" id="sett1" onclick="toggleSett('sett1','optSett1'); aggiornaRiepilogoCosto();">
       <div class="sett-info">
         <div class="sett-titolo">Settimana 1</div>
         <div class="sett-date">24 agosto – 28 agosto 2026</div>
         <div class="sett-costo" id="costoSett1"></div>
       </div>
-    </label>
-    <label class="settimana-opt" id="optSett2" onclick="aggiornaSett('sett2',this)">
-      <input type="checkbox" id="sett2" onchange="aggiornaRiepilogoCosto()">
+    </div>
+
+    <div class="settimana-opt" id="optSett2">
+      <input type="checkbox" id="sett2" onclick="toggleSett('sett2','optSett2'); aggiornaRiepilogoCosto();">
       <div class="sett-info">
         <div class="sett-titolo">Settimana 2</div>
         <div class="sett-date">31 agosto – 4 settembre 2026</div>
         <div class="sett-costo" id="costoSett2"></div>
       </div>
-    </label>
+    </div>
     <div class="msg-errore" id="errSettimane"></div>
 
     <div class="sezione-label" style="margin-top:24px;"><div class="sezione-icona">2</div>Gite</div>
-    <label class="gita-opt" id="optGita1" onclick="aggiornaGita('gita1',this)">
-      <input type="checkbox" id="gita1" onchange="aggiornaRiepilogoCosto()">
-      <div class="gita-info">
-        <div class="gita-titolo">Biciclettata – venerdì 28 agosto</div>
-        <div class="gita-desc">Gita in bicicletta sul territorio. Abbigliamento comodo consigliato.</div>
-        <div class="gita-costo">Inclusa nella quota</div>
+
+    <div class="gita-card" id="gitaCard1">
+      <div class="gita-titolo">Biciclettata – giovedì 28 agosto</div>
+      <div class="gita-desc">Gita in bicicletta sul territorio. Abbigliamento comodo consigliato.</div>
+      <div class="gita-costo">Inclusa nella quota</div>
+      <div class="gita-radio-group">
+        <label class="gita-radio-opt opt-si">
+          <input type="radio" name="gita1" value="Sì" onchange="aggiornaGitaCard('gitaCard1','gita1')"> Sì, parteciperà
+        </label>
+        <label class="gita-radio-opt opt-forse">
+          <input type="radio" name="gita1" value="Forse" onchange="aggiornaGitaCard('gitaCard1','gita1')"> Forse parteciperà
+        </label>
+        <label class="gita-radio-opt opt-no">
+          <input type="radio" name="gita1" value="No" onchange="aggiornaGitaCard('gitaCard1','gita1')"> No, non parteciperà
+        </label>
       </div>
-    </label>
-    <label class="gita-opt" id="optGita2" onclick="aggiornaGita('gita2',this)">
-      <input type="checkbox" id="gita2" onchange="aggiornaRiepilogoCosto()">
-      <div class="gita-info">
-        <div class="gita-titolo">Gita – venerdì 4 settembre</div>
-        <div class="gita-desc">Destinazione e programma saranno comunicati quanto prima. È previsto un contributo aggiuntivo per il trasporto.</div>
-        <div class="gita-costo">Costo da definire</div>
+    </div>
+
+    <div class="gita-card" id="gitaCard2">
+      <div class="gita-titolo">Gita – giovedì 3 settembre</div>
+      <div class="gita-desc">Destinazione e programma saranno comunicati quanto prima. È previsto un contributo aggiuntivo per il trasporto.</div>
+      <div class="gita-costo">Costo da definire</div>
+      <div class="gita-radio-group">
+        <label class="gita-radio-opt opt-si">
+          <input type="radio" name="gita2" value="Sì" onchange="aggiornaGitaCard('gitaCard2','gita2')"> Sì, parteciperà
+        </label>
+        <label class="gita-radio-opt opt-forse">
+          <input type="radio" name="gita2" value="Forse" onchange="aggiornaGitaCard('gitaCard2','gita2')"> Forse parteciperà
+        </label>
+        <label class="gita-radio-opt opt-no">
+          <input type="radio" name="gita2" value="No" onchange="aggiornaGitaCard('gitaCard2','gita2')"> No, non parteciperà
+        </label>
       </div>
-    </label>
+    </div>
 
     <div class="riepilogo-costo" id="riepilogoCosto" style="display:none;">
       <h3>Riepilogo costo</h3>
       <div id="righeRiepilogo"></div>
       <div class="costo-riga totale">
-        <span>Totale</span>
+        <span>Totale settimane</span>
         <span id="costoTotale">€0</span>
       </div>
     </div>
@@ -503,11 +532,12 @@
     </div>
   </div>
 
-  <!-- STEP 4: DATI GENITORI -->
+  <!-- STEP 4: DATI CONTATTO -->
   <div id="step4" class="card" style="display:none;">
     <div class="card-titolo" id="titoloStep4">Dati dei Genitori</div>
     <div class="card-sottotitolo" id="sottotitoloStep4">Inserisci i dati del genitore/tutore/affidatario.</div>
-    <div class="sezione-label"><div class="sezione-icona">1</div>Genitore / Tutore / Affidatario</div>
+
+    <div class="sezione-label"><div class="sezione-icona" id="iconaStep4">1</div><span id="etichettaStep4">Genitore / Tutore / Affidatario</span></div>
     <div class="row-2">
       <div class="field-group">
         <label>Cognome *</label>
@@ -532,18 +562,23 @@
         <div class="msg-errore" id="errEmail"></div>
       </div>
     </div>
-    <label class="toggle-g2">
-      <input type="checkbox" id="toggleG2" onchange="toggleGenitore2()">
-      <span>Aggiungi secondo genitore / tutore</span>
-    </label>
-    <div id="bloccoG2" style="display:none;">
-      <div class="sezione-label"><div class="sezione-icona">2</div>Secondo Genitore / Tutore (opzionale)</div>
-      <div class="row-2">
-        <div class="field-group"><label>Cognome</label><input type="text" id="cognomeG2" placeholder="Rossi"></div>
-        <div class="field-group"><label>Nome</label><input type="text" id="nomeG2" placeholder="Anna"></div>
+
+    <!-- Solo per minorenni -->
+    <div id="bloccoG2Wrapper">
+      <label class="toggle-g2">
+        <input type="checkbox" id="toggleG2" onchange="toggleGenitore2()">
+        <span>Aggiungi secondo genitore / tutore</span>
+      </label>
+      <div id="bloccoG2" style="display:none;">
+        <div class="sezione-label"><div class="sezione-icona">2</div>Secondo Genitore / Tutore (opzionale)</div>
+        <div class="row-2">
+          <div class="field-group"><label>Cognome</label><input type="text" id="cognomeG2" placeholder="Rossi"></div>
+          <div class="field-group"><label>Nome</label><input type="text" id="nomeG2" placeholder="Anna"></div>
+        </div>
+        <div class="field-group"><label>Cellulare</label><input type="tel" id="cellG2" placeholder="+39 347 0000000"></div>
       </div>
-      <div class="field-group"><label>Cellulare</label><input type="tel" id="cellG2" placeholder="+39 347 0000000"></div>
     </div>
+
     <div class="btn-wrap">
       <button class="btn btn-sec" onclick="vaiStep(3)">← Indietro</button>
       <button class="btn btn-primario" onclick="validaStep4()">Avanti →</button>
@@ -557,26 +592,14 @@
 
     <div class="clausola" id="cl1">
       <div class="clausola-testo">
-        <strong>Comportamenti inammissibili</strong>
-        Autorizzo gli organizzatori ad interrompere la partecipazione di nostro/a figlio/a alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.
+        <strong id="testoComportamenti">Comportamenti inammissibili</strong>
+        <span id="corpoComportamenti">Autorizzo gli organizzatori ad interrompere la partecipazione di nostro/a figlio/a alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.</span>
       </div>
       <label class="check-wrap">
         <input type="checkbox" id="chkComportamenti" onchange="aggiornaCl('cl1',this)">
         <span>Accetto e autorizzo</span>
       </label>
       <div class="msg-errore" id="errComportamenti"></div>
-    </div>
-
-    <div class="clausola" id="cl2">
-      <div class="clausola-testo">
-        <strong>Interventi di carattere sanitario</strong>
-        Autorizzo gli organizzatori, in caso di necessità, a chiedere l'intervento del Servizio Sanitario e/o accompagnare il/la ragazzo/a presso il Pronto Soccorso (contemporaneamente i responsabili e i loro collaboratori si attiveranno per avvisare almeno un genitore utilizzando il numero di telefono di reperibilità) e al successivo riaffidamento del ragazzo/ragazza agli organizzatori, nella persona del Responsabile dell'Oratorio e dei suoi collaboratori.
-      </div>
-      <label class="check-wrap">
-        <input type="checkbox" id="chkSanitario" onchange="aggiornaCl('cl2',this)">
-        <span>Accetto e autorizzo</span>
-      </label>
-      <div class="msg-errore" id="errSanitario"></div>
     </div>
 
     <div class="clausola" id="cl3">
@@ -689,11 +712,7 @@ const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzW_gM5eizl2NPYGEKhA
 let stepCorrente = 0;
 const TOTALE_STEP = 7;
 
-let statoIscrizione = {
-  ruolo: "",
-  isMagg: false,
-  cfVerificato: false,
-};
+let statoIscrizione = { ruolo: "", isMagg: false, cfVerificato: false };
 
 function vaiStep(n) {
   document.getElementById("step" + stepCorrente).style.display = "none";
@@ -718,27 +737,24 @@ function mostraAlert(id, tipo, testo) {
   el.className = "alert show-" + tipo;
   el.textContent = testo;
 }
-function nascondiAlert(id) {
-  document.getElementById(id).className = "alert";
-}
+function nascondiAlert(id) { document.getElementById(id).className = "alert"; }
 
 function annoNascitaDaCF(cf) {
   if (!cf || cf.length < 8) return null;
-  const annoNum = parseInt(cf.substring(6, 8), 10);
-  if (isNaN(annoNum)) return null;
-  return annoNum >= 25 ? 1900 + annoNum : 2000 + annoNum;
+  const n = parseInt(cf.substring(6, 8), 10);
+  if (isNaN(n)) return null;
+  return n >= 25 ? 1900 + n : 2000 + n;
 }
 
 function isMaggiorenneDaCF(cf) {
   if (!cf || cf.length < 11) return null;
-  const annoNasc = annoNascitaDaCF(cf);
-  if (!annoNasc) return null;
+  const anno = annoNascitaDaCF(cf);
+  if (!anno) return null;
   const mesiCF = "ABCDEHLMPRST";
-  const meseChar = cf[8].toUpperCase();
-  const mese = mesiCF.indexOf(meseChar);
+  const mese = mesiCF.indexOf(cf[8].toUpperCase());
   let giorno = parseInt(cf.substring(9, 11), 10);
   if (giorno > 40) giorno -= 40;
-  const dataNasc = new Date(annoNasc, mese, giorno);
+  const dataNasc = new Date(anno, mese, giorno);
   const oggi = new Date();
   const eta = oggi.getFullYear() - dataNasc.getFullYear() -
     (oggi.getMonth() < dataNasc.getMonth() ||
@@ -788,17 +804,25 @@ async function cercaCF() {
     document.getElementById("costoSett1").textContent = ruolo === "PAR" ? "€20,00" : "Gratuita";
     document.getElementById("costoSett2").textContent = ruolo === "PAR" ? "€20,00" : "Gratuita";
 
+    // Adatta step 4
     if (isMagg) {
       document.getElementById("titoloStep4").textContent = "Dati di contatto";
       document.getElementById("sottotitoloStep4").textContent = "Inserisci i tuoi dati di contatto.";
+      document.getElementById("etichettaStep4").textContent = "1 – Animatore";
+      document.getElementById("bloccoG2Wrapper").style.display = "none";
       document.getElementById("labelFirmaG1").textContent = "Firma del partecipante *";
       document.getElementById("notaFirma").style.display = "none";
       document.getElementById("firmaG2Wrap").style.display = "none";
+      // Testo autorizzazioni in prima persona per maggiorenni/animatori
+      document.getElementById("corpoComportamenti").textContent = "Autorizzo gli organizzatori ad interrompere la mia partecipazione alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.";
     } else {
       document.getElementById("titoloStep4").textContent = "Dati dei Genitori";
       document.getElementById("sottotitoloStep4").textContent = "Inserisci i dati del genitore/tutore/affidatario.";
+      document.getElementById("etichettaStep4").textContent = "Genitore / Tutore / Affidatario";
+      document.getElementById("bloccoG2Wrapper").style.display = "block";
       document.getElementById("labelFirmaG1").textContent = "Firma Genitore / Tutore / Affidatario *";
       document.getElementById("notaFirma").style.display = "block";
+      document.getElementById("corpoComportamenti").textContent = "Autorizzo gli organizzatori ad interrompere la partecipazione di nostro/a figlio/a alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.";
     }
 
     if (data.ok && data.trovato) {
@@ -820,8 +844,17 @@ function precompila(d) {
   set("cognome",d.cognome); set("nome",d.nome); set("luogoNasc",d.luogoNasc);
   set("cellPartecipante",d.cell); set("tessera",d.tessera); set("note",d.note);
   set("indirizzo",d.indirizzo); set("localita",d.localita); set("cap",d.cap); set("provincia",d.provincia);
-  set("cognomeG1",d.cognomeG1); set("nomeG1",d.nomeG1); set("cellG1",d.cellG1);
-  set("email",d.email); set("cognomeG2",d.cognomeG2); set("nomeG2",d.nomeG2); set("cellG2",d.cellG2);
+
+  if (statoIscrizione.isMagg) {
+    // Per maggiorenni, precompila i campi contatto con i propri dati
+    set("cognomeG1", d.cognome);
+    set("nomeG1", d.nome);
+    set("cellG1", d.cell);
+    set("email", d.email);
+  } else {
+    set("cognomeG1",d.cognomeG1); set("nomeG1",d.nomeG1); set("cellG1",d.cellG1);
+    set("email",d.email); set("cognomeG2",d.cognomeG2); set("nomeG2",d.nomeG2); set("cellG2",d.cellG2);
+  }
 
   if (d.dataNasc) {
     const s = d.dataNasc.toString().trim();
@@ -840,7 +873,7 @@ function precompila(d) {
     }
   }
 
-  if (d.cognomeG2 || d.nomeG2 || d.cellG2) {
+  if (!statoIscrizione.isMagg && (d.cognomeG2 || d.nomeG2 || d.cellG2)) {
     document.getElementById("toggleG2").checked = true;
     toggleGenitore2();
   }
@@ -849,41 +882,42 @@ function precompila(d) {
   }
 }
 
-function aggiornaSett(id, label) {
-  const cb = document.getElementById(id);
-  cb.checked = !cb.checked;
-  label.classList.toggle("selezionata", cb.checked);
-  aggiornaRiepilogoCosto();
+// ── SETTIMANE ─────────────────────────────────────────────────
+function toggleSett(id, optId) {
+  const opt = document.getElementById(optId);
+  const cb  = document.getElementById(id);
+  opt.classList.toggle("selezionata", cb.checked);
 }
 
-function aggiornaGita(id, label) {
-  const cb = document.getElementById(id);
-  cb.checked = !cb.checked;
-  label.classList.toggle("selezionata", cb.checked);
-  aggiornaRiepilogoCosto();
+// ── GITE ─────────────────────────────────────────────────────
+function aggiornaGitaCard(cardId, name) {
+  const val  = document.querySelector(`input[name="${name}"]:checked`)?.value;
+  const card = document.getElementById(cardId);
+  card.className = "gita-card";
+  if (val === "Sì")    card.classList.add("selezionata-si");
+  if (val === "Forse") card.classList.add("selezionata-forse");
+  if (val === "No")    card.classList.add("selezionata-no");
 }
 
+// ── RIEPILOGO COSTO ───────────────────────────────────────────
 function aggiornaRiepilogoCosto() {
   const isPAR = statoIscrizione.ruolo === "PAR";
   const s1 = document.getElementById("sett1").checked;
   const s2 = document.getElementById("sett2").checked;
-  const g1 = document.getElementById("gita1").checked;
-  const g2 = document.getElementById("gita2").checked;
 
   let totale = 0;
   const righe = [];
 
   if (s1) { const c = isPAR ? 20 : 0; righe.push({label:"Settimana 1 (24–28 ago)", costo:c}); totale += c; }
   if (s2) { const c = isPAR ? 20 : 0; righe.push({label:"Settimana 2 (31 ago–4 set)", costo:c}); totale += c; }
-  if (g1) righe.push({label:"Biciclettata (28 ago)", costo:"Inclusa"});
-  if (g2) righe.push({label:"Gita (4 set)", costo:"Da definire"});
 
   const box = document.getElementById("riepilogoCosto");
   if (righe.length === 0) { box.style.display = "none"; return; }
   box.style.display = "block";
 
-  const cont = document.getElementById("righeRiepilogo");
-  cont.innerHTML = righe.map(r => `<div class="costo-riga"><span>${r.label}</span><span>${typeof r.costo === "number" ? "€"+r.costo : r.costo}</span></div>`).join("");
+  document.getElementById("righeRiepilogo").innerHTML = righe.map(r =>
+    `<div class="costo-riga"><span>${r.label}</span><span>${typeof r.costo === "number" ? "€"+r.costo : r.costo}</span></div>`
+  ).join("");
   document.getElementById("costoTotale").textContent = "€" + totale;
 }
 
@@ -893,6 +927,7 @@ function toggleGenitore2() {
   document.getElementById("firmaG2Wrap").style.display = (m && !statoIscrizione.isMagg) ? "block" : "none";
 }
 
+// ── VALIDAZIONI ──────────────────────────────────────────────
 function validaStep1() {
   const cf = document.getElementById("cfInput").value.trim().toUpperCase();
   const er = document.getElementById("errCF");
@@ -962,7 +997,7 @@ function validaStep4() {
 
 function validaStep5() {
   let ok = true;
-  [["chkComportamenti","errComportamenti"],["chkSanitario","errSanitario"],["chkPrivacy","errPrivacy"]].forEach(([id,err]) => {
+  [["chkComportamenti","errComportamenti"],["chkPrivacy","errPrivacy"]].forEach(([id,err]) => {
     const el=document.getElementById(id), er=document.getElementById(err);
     if (!el.checked) { er.textContent="Autorizzazione obbligatoria"; ok=false; } else er.textContent="";
   });
@@ -1009,16 +1044,16 @@ async function inviaIscrizione() {
 
   const g=document.getElementById("nascGiorno").value, m=document.getElementById("nascMese").value, a=document.getElementById("nascAnno").value;
   const dataNasc=(g&&m&&a)?`${g}/${m}/${a}`:"";
-  const hasG2=document.getElementById("toggleG2").checked;
+  const hasG2 = !statoIscrizione.isMagg && document.getElementById("toggleG2").checked;
   const consensoFoto=document.querySelector('input[name="consensoFoto"]:checked')?.value||"";
   const s1=document.getElementById("sett1").checked;
   const s2=document.getElementById("sett2").checked;
-  const g1=document.getElementById("gita1").checked;
-  const g2=document.getElementById("gita2").checked;
   const isPAR = statoIscrizione.ruolo === "PAR";
   const quota = isPAR ? ((s1?20:0)+(s2?20:0)) : 0;
   const settimane = [s1?"Settimana 1 (24–28 ago)":"", s2?"Settimana 2 (31 ago–4 set)":""].filter(Boolean).join(", ");
-  const gite = [g1?"Biciclettata 28/08":"", g2?"Gita 04/09":""].filter(Boolean).join(", ");
+  const gita1Val = document.querySelector('input[name="gita1"]:checked')?.value || "Non indicato";
+  const gita2Val = document.querySelector('input[name="gita2"]:checked')?.value || "Non indicato";
+  const gite = `Biciclettata 28/08: ${gita1Val} | Gita 03/09: ${gita2Val}`;
 
   const payload = {
     azione:"salvaIscrizione",
@@ -1048,7 +1083,6 @@ async function inviaIscrizione() {
       nomeG2:           hasG2 ? document.getElementById("nomeG2").value.trim() : "",
       cellG2:           hasG2 ? document.getElementById("cellG2").value.trim() : "",
       checkComportamenti: document.getElementById("chkComportamenti").checked,
-      checkSanitario:     document.getElementById("chkSanitario").checked,
       checkPrivacyLetta:  document.getElementById("chkPrivacy").checked,
       consensoFoto,
       firmaG1: document.getElementById("canvasG1").toDataURL("image/png"),
