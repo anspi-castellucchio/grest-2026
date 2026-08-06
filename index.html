@@ -29,7 +29,7 @@
 
   body {
     font-family: 'Lato', sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     background: linear-gradient(135deg, #e6f3fb 0%, #F5F7FA 60%, #e6f3fb 100%);
     min-height: 100vh;
     color: var(--testo);
@@ -42,17 +42,17 @@
     text-align: center;
     box-shadow: 0 2px 8px rgba(8,112,183,0.08);
   }
-  .header img.logo-anspi { height: 60px; display: block; margin: 0 auto 8px; }
-  .header-intestazione { font-size: 13px; color: var(--testo-sec); line-height: 1.7; }
+  .header img.logo-anspi { height: 65px; display: block; margin: 0 auto 8px; }
+  .header-intestazione { font-size: 14px; color: var(--testo-sec); line-height: 1.7; }
 
-  .container { max-width: 680px; margin: 28px auto; padding: 0 16px 60px; }
+  .container { max-width: 700px; margin: 28px auto; padding: 0 16px 60px; }
 
   .progress-wrap {
     background: var(--bianco); border-radius: 50px;
     padding: 6px 8px; box-shadow: var(--ombra);
     margin-bottom: 24px; display: flex; align-items: center; gap: 4px;
   }
-  .step-dot { flex: 1; height: 8px; border-radius: 50px; background: var(--grigio-bordo); transition: background 0.4s; }
+  .step-dot { flex: 1; height: 9px; border-radius: 50px; background: var(--grigio-bordo); transition: background 0.4s; }
   .step-dot.attivo     { background: var(--arancio); }
   .step-dot.completato { background: var(--blu); }
 
@@ -63,192 +63,188 @@
   }
   @keyframes slideIn { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
 
-  .card-titolo { font-family:'Nunito',sans-serif; font-size:25px; font-weight:900; color:var(--blu-scuro); margin-bottom:6px; }
-  .card-sottotitolo { font-size:16px; color:var(--testo-sec); margin-bottom:24px; line-height:1.5; }
+  .card-titolo { font-family:'Nunito',sans-serif; font-size:27px; font-weight:900; color:var(--blu-scuro); margin-bottom:6px; }
+  .card-sottotitolo { font-size:17px; color:var(--testo-sec); margin-bottom:24px; line-height:1.5; }
 
   .badge-evento {
     background: var(--blu);
     color: var(--bianco); border-radius: var(--raggio);
     padding: 24px; margin-bottom: 20px; text-align: center;
   }
-  .badge-evento img.logo-grest { height: 240px; display: block; margin: 0 auto 16px; }
-  .badge-evento h1 { font-family:'Nunito',sans-serif; font-size:28px; font-weight:900; margin-bottom:4px; }
-  .badge-evento .date { font-size:17px; opacity:0.92; margin-bottom:4px; }
-  .badge-evento .target { font-size:14px; opacity:0.80; margin-bottom:16px; }
+  .badge-evento img.logo-grest { height: 170px; display: block; margin: 0 auto 16px; max-width:100%; }
+  .badge-evento h1 { font-family:'Nunito',sans-serif; font-size:30px; font-weight:900; margin-bottom:4px; }
+  .badge-evento .date { font-size:19px; opacity:0.92; margin-bottom:4px; }
+  .badge-evento .target { font-size:15px; opacity:0.82; margin-bottom:16px; }
   .badge-evento .tema {
     background: rgba(255,255,255,0.12);
     border-radius: var(--raggio-sm);
-    padding: 16px;
-    font-size:14px; line-height:1.8; text-align:left;
+    padding: 18px;
+    font-size:15px; line-height:1.8; text-align:left;
     border-left: 4px solid var(--arancio);
   }
   .tema-titolo {
-    font-family:'Nunito',sans-serif; font-size:22px; font-weight:900;
+    font-family:'Nunito',sans-serif; font-size:24px; font-weight:900;
     margin-bottom:10px; color: var(--bianco); text-align:center;
   }
 
   .programma { background:var(--blu-pallido); border-radius:var(--raggio-sm); padding:18px; margin-bottom:20px; }
-  .programma h3 { font-family:'Nunito',sans-serif; font-weight:800; font-size:15px; color:var(--blu-scuro); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.5px; }
-  .slot { display:flex; gap:12px; padding:6px 0; border-bottom:1px solid rgba(8,112,183,0.1); font-size:15px; }
+  .programma h3 { font-family:'Nunito',sans-serif; font-weight:800; font-size:16px; color:var(--blu-scuro); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.5px; }
+  .slot { display:flex; gap:12px; padding:7px 0; border-bottom:1px solid rgba(8,112,183,0.1); font-size:16px; }
   .slot:last-child { border-bottom:none; }
-  .slot .ora { font-weight:700; color:var(--blu); min-width:110px; }
-  .gita-avviso { font-family:'Nunito',sans-serif; font-weight:800; font-size:17px; color:var(--blu-scuro); margin-top:16px; text-align:center; }
+  .slot .ora { font-weight:700; color:var(--blu); min-width:115px; }
+  .gita-avviso { font-family:'Nunito',sans-serif; font-weight:800; font-size:18px; color:var(--blu-scuro); margin-top:16px; text-align:center; }
 
-  .field-group { margin-bottom:18px; }
-  .field-group label { display:block; font-size:14px; font-weight:700; color:var(--testo-sec); margin-bottom:5px; text-transform:uppercase; letter-spacing:0.4px; }
+  .field-group { margin-bottom:20px; }
+  .field-group label { display:block; font-size:15px; font-weight:700; color:var(--testo-sec); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.4px; }
   .field-group input,
   .field-group select {
-    width:100%; padding:13px 14px;
+    width:100%; padding:14px 14px;
     border:2px solid var(--grigio-bordo); border-radius:var(--raggio-sm);
-    font-size:17px; font-family:'Lato',sans-serif; color:var(--testo);
+    font-size:18px; font-family:'Lato',sans-serif; color:var(--testo);
     background:var(--grigio); transition:border-color 0.2s, background 0.2s;
     outline:none; -webkit-appearance:none; appearance:none;
   }
   .field-group input:focus, .field-group select:focus { border-color:var(--blu-chiaro); background:var(--bianco); }
   .field-group input.errore, .field-group select.errore { border-color:var(--rosso); }
-  .msg-errore { font-size:14px; color:var(--rosso); margin-top:4px; min-height:16px; }
+  .msg-errore { font-size:15px; color:var(--rosso); margin-top:4px; min-height:18px; }
 
   .row-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   .row-3 { display:grid; grid-template-columns:2fr 1fr 1fr; gap:12px; }
 
-  .data-wrap { display:grid; grid-template-columns:80px 1fr 90px; gap:8px; }
-  .data-wrap select { padding:13px 8px; }
+  .data-wrap { display:grid; grid-template-columns:85px 1fr 95px; gap:8px; }
+  .data-wrap select { padding:14px 8px; }
 
   .cf-wrap { position:relative; }
-  .cf-wrap input { padding-right:120px; }
+  .cf-wrap input { padding-right:125px; }
   .cf-btn {
     position:absolute; right:6px; top:50%; transform:translateY(-50%);
     background:var(--arancio); color:var(--bianco); border:none;
-    border-radius:8px; padding:8px 16px; font-size:15px; font-weight:700;
+    border-radius:8px; padding:9px 16px; font-size:16px; font-weight:700;
     cursor:pointer; transition:background 0.2s; white-space:nowrap;
   }
   .cf-btn:hover { background:var(--arancio-scuro); }
   .cf-btn:disabled { opacity:0.6; cursor:not-allowed; }
 
-  .alert { border-radius:var(--raggio-sm); padding:14px 16px; font-size:16px; margin-bottom:18px; line-height:1.5; display:none; }
+  .alert { border-radius:var(--raggio-sm); padding:15px 16px; font-size:17px; margin-bottom:18px; line-height:1.5; display:none; }
   .alert.show-info    { display:block; background:var(--blu-pallido); color:var(--blu-scuro); border-left:4px solid var(--blu); }
   .alert.show-success { display:block; background:#E8F5E9; color:var(--verde); border-left:4px solid var(--verde); }
   .alert.show-error   { display:block; background:#FFEBEE; color:var(--rosso); border-left:4px solid var(--rosso); }
 
   .badge-ruolo {
-    border-radius: var(--raggio-sm); padding: 13px 16px;
-    font-size: 16px; font-weight: 700; margin-bottom: 16px;
+    border-radius: var(--raggio-sm); padding: 14px 16px;
+    font-size: 17px; font-weight: 700; margin-bottom: 16px;
     text-align: center; display: none;
   }
   .badge-ruolo.par { background:#E8F5E9; color:var(--verde); border:2px solid var(--verde); display:block; }
   .badge-ruolo.ani { background:var(--blu-pallido); color:var(--blu-scuro); border:2px solid var(--blu); display:block; }
 
-  .sezione-label { font-family:'Nunito',sans-serif; font-weight:800; font-size:17px; color:var(--blu-scuro); margin:22px 0 14px; padding-bottom:8px; border-bottom:2px solid var(--blu-pallido); display:flex; align-items:center; gap:8px; }
-  .sezione-icona { width:28px; height:28px; background:var(--blu); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--bianco); font-size:14px; font-weight:900; flex-shrink:0; }
+  .sezione-label { font-family:'Nunito',sans-serif; font-weight:800; font-size:18px; color:var(--blu-scuro); margin:22px 0 14px; padding-bottom:8px; border-bottom:2px solid var(--blu-pallido); display:flex; align-items:center; gap:8px; }
+  .sezione-icona { width:30px; height:30px; background:var(--blu); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--bianco); font-size:15px; font-weight:900; flex-shrink:0; }
 
-  /* ── SETTIMANE ── */
   .settimana-opt {
     border:2px solid var(--grigio-bordo); border-radius:var(--raggio-sm);
     padding:16px; margin-bottom:10px;
     transition:border-color 0.2s, background 0.2s;
-    display:flex; align-items:flex-start; gap:12px; cursor:pointer;
+    display:flex; align-items:flex-start; gap:14px; cursor:pointer;
   }
   .settimana-opt:hover { border-color:var(--blu-chiaro); }
   .settimana-opt.selezionata { border-color:var(--blu); background:var(--blu-pallido); }
-  .settimana-opt input[type="checkbox"] { width:22px; height:22px; min-width:22px; accent-color:var(--blu); margin-top:2px; cursor:pointer; }
+  .settimana-opt input[type="checkbox"] { width:24px; height:24px; min-width:24px; accent-color:var(--blu); margin-top:2px; cursor:pointer; }
   .settimana-opt .sett-info { flex:1; }
-  .settimana-opt .sett-titolo { font-weight:700; font-size:16px; margin-bottom:2px; }
-  .settimana-opt .sett-date { font-size:14px; color:var(--testo-sec); }
-  .settimana-opt .sett-costo { font-size:14px; font-weight:700; color:var(--blu); margin-top:4px; }
+  .settimana-opt .sett-titolo { font-weight:700; font-size:18px; margin-bottom:3px; }
+  .settimana-opt .sett-date { font-size:16px; color:var(--testo-sec); }
+  .settimana-opt .sett-costo { font-size:16px; font-weight:700; color:var(--blu); margin-top:5px; }
 
-  /* ── GITE ── */
   .gita-card {
     border:2px solid var(--grigio-bordo); border-radius:var(--raggio-sm);
-    padding:16px; margin-bottom:14px;
-    transition:border-color 0.2s;
+    padding:16px; margin-bottom:14px; transition:border-color 0.2s;
   }
   .gita-card.selezionata-si    { border-color:var(--verde); background:#f1f8f2; }
   .gita-card.selezionata-forse { border-color:#FF9800; background:#FFF8E1; }
   .gita-card.selezionata-no    { border-color:var(--grigio-bordo); background:var(--grigio); }
-  .gita-titolo { font-weight:700; font-size:16px; margin-bottom:4px; }
-  .gita-desc { font-size:14px; color:var(--testo-sec); line-height:1.5; margin-bottom:12px; }
-  .gita-costo { font-size:14px; font-weight:700; color:var(--arancio-scuro); margin-bottom:12px; }
+  .gita-titolo { font-weight:700; font-size:18px; margin-bottom:5px; }
+  .gita-desc { font-size:16px; color:var(--testo-sec); line-height:1.5; margin-bottom:12px; }
+  .gita-costo { font-size:16px; font-weight:700; color:var(--arancio-scuro); margin-bottom:14px; }
   .gita-radio-group { display:flex; gap:8px; flex-wrap:wrap; }
   .gita-radio-opt {
-    display:flex; align-items:center; gap:8px;
+    display:flex; align-items:center; gap:9px;
     background:var(--grigio); border:2px solid var(--grigio-bordo);
-    border-radius:var(--raggio-sm); padding:10px 14px;
+    border-radius:var(--raggio-sm); padding:12px 16px;
     cursor:pointer; transition:border-color 0.2s, background 0.2s;
-    font-size:15px; font-weight:600;
+    font-size:16px; font-weight:600;
   }
   .gita-radio-opt:hover { border-color:var(--blu-chiaro); }
-  .gita-radio-opt input[type="radio"] { width:18px; height:18px; accent-color:var(--blu); }
-  .gita-radio-opt.opt-si    { }
-  .gita-radio-opt.opt-forse { }
-  .gita-radio-opt.opt-no    { }
+  .gita-radio-opt input[type="radio"] { width:20px; height:20px; accent-color:var(--blu); }
 
-  /* ── RIEPILOGO COSTO ── */
-  .riepilogo-costo { background:var(--blu-pallido); border-radius:var(--raggio-sm); padding:16px; margin-top:16px; }
-  .riepilogo-costo h3 { font-family:'Nunito',sans-serif; font-weight:800; font-size:15px; color:var(--blu-scuro); margin-bottom:10px; text-transform:uppercase; }
-  .costo-riga { display:flex; justify-content:space-between; font-size:15px; padding:4px 0; }
-  .costo-riga.totale { font-weight:700; font-size:17px; border-top:2px solid var(--blu); margin-top:6px; padding-top:8px; color:var(--blu-scuro); }
+  .riepilogo-costo { background:var(--blu-pallido); border-radius:var(--raggio-sm); padding:18px; margin-top:16px; }
+  .riepilogo-costo h3 { font-family:'Nunito',sans-serif; font-weight:800; font-size:16px; color:var(--blu-scuro); margin-bottom:10px; text-transform:uppercase; }
+  .costo-riga { display:flex; justify-content:space-between; font-size:17px; padding:5px 0; }
+  .costo-riga.totale { font-weight:700; font-size:19px; border-top:2px solid var(--blu); margin-top:6px; padding-top:9px; color:var(--blu-scuro); }
 
-  /* ── CLAUSOLE ── */
   .clausola { background:var(--grigio); border:2px solid var(--grigio-bordo); border-radius:var(--raggio-sm); padding:18px; margin-bottom:14px; transition:border-color 0.2s, background 0.2s; }
   .clausola.accettata { border-color:var(--verde); background:#f1f8f2; }
-  .clausola-testo { font-size:15px; line-height:1.7; color:var(--testo); margin-bottom:14px; }
+  .clausola-testo { font-size:16px; line-height:1.7; color:var(--testo); margin-bottom:14px; }
   .clausola-testo a { color:var(--blu); }
-  .clausola-testo strong { display:block; margin-bottom:6px; font-size:16px; }
-  .check-wrap { display:flex; align-items:flex-start; gap:10px; cursor:pointer; }
-  .check-wrap input[type="checkbox"] { width:20px; height:20px; min-width:20px; accent-color:var(--blu); cursor:pointer; margin-top:2px; }
-  .check-wrap span { font-size:16px; font-weight:600; line-height:1.4; }
+  .clausola-testo strong { display:block; margin-bottom:6px; font-size:17px; }
+  .check-wrap { display:flex; align-items:flex-start; gap:11px; cursor:pointer; }
+  .check-wrap input[type="checkbox"] { width:22px; height:22px; min-width:22px; accent-color:var(--blu); cursor:pointer; margin-top:2px; }
+  .check-wrap span { font-size:17px; font-weight:600; line-height:1.4; }
 
-  .radio-group { display:flex; flex-direction:column; gap:8px; margin-top:4px; }
-  .radio-opt { display:flex; align-items:flex-start; gap:10px; background:var(--grigio); border:2px solid var(--grigio-bordo); border-radius:var(--raggio-sm); padding:13px 14px; cursor:pointer; transition:border-color 0.2s; }
+  .radio-group { display:flex; flex-direction:column; gap:9px; margin-top:4px; }
+  .radio-opt { display:flex; align-items:flex-start; gap:11px; background:var(--grigio); border:2px solid var(--grigio-bordo); border-radius:var(--raggio-sm); padding:14px 15px; cursor:pointer; transition:border-color 0.2s; }
   .radio-opt:hover { border-color:var(--blu-chiaro); }
-  .radio-opt input[type="radio"] { width:18px; height:18px; min-width:18px; accent-color:var(--blu); margin-top:2px; }
-  .radio-opt span { font-size:15px; line-height:1.4; }
+  .radio-opt input[type="radio"] { width:20px; height:20px; min-width:20px; accent-color:var(--blu); margin-top:2px; }
+  .radio-opt span { font-size:16px; line-height:1.4; }
 
-  .toggle-g2 { display:flex; align-items:center; gap:10px; margin:18px 0 14px; cursor:pointer; }
-  .toggle-g2 input { accent-color:var(--blu); width:18px; height:18px; }
-  .toggle-g2 span { font-size:16px; font-weight:600; }
+  .toggle-g2 { display:flex; align-items:center; gap:11px; margin:18px 0 14px; cursor:pointer; }
+  .toggle-g2 input { accent-color:var(--blu); width:20px; height:20px; }
+  .toggle-g2 span { font-size:17px; font-weight:600; }
 
   .firma-wrap { margin-top:18px; }
-  .firma-label { font-size:14px; font-weight:700; color:var(--testo-sec); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:6px; }
+  .firma-label { font-size:15px; font-weight:700; color:var(--testo-sec); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:6px; }
   .firma-canvas-wrap { border:2px solid var(--grigio-bordo); border-radius:var(--raggio-sm); background:var(--bianco); position:relative; touch-action:none; }
-  .firma-canvas-wrap canvas { display:block; width:100%; height:150px; cursor:crosshair; border-radius:calc(var(--raggio-sm) - 2px); }
-  .firma-placeholder { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:16px; color:#ccc; pointer-events:none; transition:opacity 0.2s; }
-  .firma-cancella { margin-top:6px; background:none; border:1px solid var(--grigio-bordo); border-radius:6px; padding:6px 14px; font-size:14px; color:var(--testo-sec); cursor:pointer; }
+  .firma-canvas-wrap canvas { display:block; width:100%; height:160px; cursor:crosshair; border-radius:calc(var(--raggio-sm) - 2px); }
+  .firma-placeholder { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:17px; color:#ccc; pointer-events:none; transition:opacity 0.2s; }
+  .firma-cancella { margin-top:7px; background:none; border:1px solid var(--grigio-bordo); border-radius:6px; padding:7px 15px; font-size:15px; color:var(--testo-sec); cursor:pointer; }
   .firma-cancella:hover { border-color:var(--rosso); color:var(--rosso); }
-  .firma-nota { font-size:13px; color:var(--testo-sec); line-height:1.6; margin-top:10px; font-style:italic; }
+  .firma-nota { font-size:14px; color:var(--testo-sec); line-height:1.6; margin-top:10px; font-style:italic; }
 
   .btn-wrap { display:flex; justify-content:space-between; align-items:center; margin-top:24px; gap:10px; }
-  .btn { padding:14px 28px; border-radius:var(--raggio-sm); font-size:17px; font-weight:700; font-family:'Nunito',sans-serif; cursor:pointer; border:none; transition:all 0.2s; }
-  .btn-primario { background:var(--arancio); color:var(--bianco); flex:1; max-width:260px; }
+  .btn { padding:15px 28px; border-radius:var(--raggio-sm); font-size:18px; font-weight:700; font-family:'Nunito',sans-serif; cursor:pointer; border:none; transition:all 0.2s; }
+  .btn-primario { background:var(--arancio); color:var(--bianco); flex:1; max-width:270px; }
   .btn-primario:hover { background:var(--arancio-scuro); transform:translateY(-1px); box-shadow:0 4px 14px rgba(255,132,39,0.35); }
   .btn-sec { background:var(--grigio); color:var(--testo-sec); border:2px solid var(--grigio-bordo); }
   .btn-sec:hover { border-color:var(--blu-chiaro); color:var(--blu); }
   .btn:disabled { opacity:0.5; cursor:not-allowed; transform:none !important; }
 
-  .spinner { display:inline-block; width:16px; height:16px; border:3px solid rgba(255,255,255,0.3); border-top-color:#fff; border-radius:50%; animation:spin 0.8s linear infinite; vertical-align:middle; margin-right:6px; }
+  .spinner { display:inline-block; width:17px; height:17px; border:3px solid rgba(255,255,255,0.3); border-top-color:#fff; border-radius:50%; animation:spin 0.8s linear infinite; vertical-align:middle; margin-right:6px; }
   @keyframes spin { to { transform:rotate(360deg); } }
 
   .conferma-hero { text-align:center; padding:24px 0 20px; }
-  .conferma-icona { width:72px; height:72px; background:linear-gradient(135deg,var(--blu-scuro),var(--blu)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:32px; color:#ffffff; }
-  .conferma-hero h2 { font-family:'Nunito',sans-serif; font-size:26px; font-weight:900; color:var(--blu-scuro); margin-bottom:8px; }
-  .conferma-hero p { font-size:16px; color:var(--testo-sec); line-height:1.6; }
+  .conferma-icona { width:76px; height:76px; background:linear-gradient(135deg,var(--blu-scuro),var(--blu)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; font-size:34px; color:#ffffff; }
+  .conferma-hero h2 { font-family:'Nunito',sans-serif; font-size:28px; font-weight:900; color:var(--blu-scuro); margin-bottom:8px; }
+  .conferma-hero p { font-size:17px; color:var(--testo-sec); line-height:1.6; }
   .info-box { background:var(--grigio); border-radius:var(--raggio-sm); padding:18px; margin-top:16px; }
-  .info-box h3 { font-family:'Nunito',sans-serif; font-weight:800; font-size:16px; color:var(--testo); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.4px; }
-  .info-box p, .info-box li { font-size:15px; color:var(--testo-sec); line-height:1.6; }
-  .info-box ul { padding-left:16px; margin-top:6px; }
+  .info-box h3 { font-family:'Nunito',sans-serif; font-weight:800; font-size:17px; color:var(--testo); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.4px; }
+  .info-box p, .info-box li { font-size:16px; color:var(--testo-sec); line-height:1.6; }
+  .info-box ul { padding-left:18px; margin-top:6px; }
   .info-box strong { color:var(--testo); }
   .info-box a { color:var(--blu); font-weight:600; }
-  .iban-box { background:var(--blu-pallido); border-radius:8px; padding:12px 16px; margin-top:8px; font-size:15px; }
-  .iban-box strong { display:block; color:var(--blu-scuro); font-size:13px; text-transform:uppercase; margin-bottom:2px; margin-top:6px; }
+  .iban-box { background:var(--blu-pallido); border-radius:8px; padding:13px 16px; margin-top:8px; font-size:16px; }
+  .iban-box strong { display:block; color:var(--blu-scuro); font-size:14px; text-transform:uppercase; margin-bottom:2px; margin-top:7px; }
   .iban-box strong:first-child { margin-top:0; }
 
-  @media (max-width:480px) {
+  @media (max-width:520px) {
+    body { font-size: 17px; }
     .row-2, .row-3 { grid-template-columns:1fr; }
-    .data-wrap { grid-template-columns:70px 1fr 80px; gap:6px; }
-    .card { padding:18px; }
+    .data-wrap { grid-template-columns:75px 1fr 85px; gap:6px; }
+    .card { padding:20px; }
     .btn-wrap { flex-direction:column-reverse; }
     .btn-primario, .btn-sec { max-width:100%; width:100%; }
     .gita-radio-group { flex-direction:column; }
+    .gita-radio-opt { width:100%; }
+    .badge-evento h1 { font-size:25px; }
+    .badge-evento img.logo-grest { height:140px; }
   }
 </style>
 </head>
@@ -288,12 +284,12 @@
         E questo è quello che vogliamo dirci tra noi al Cre-Grest,
         contenti di vivere un'esperienza di fraternità, ma che vogliamo dire anche a San Francesco,
         facendolo diventare compagno di avventura, fratello!
-        <div class="tema-titolo" style="margin-top:16px;">BELLA FRA!</div>
+        <div class="tema-titolo" style="margin-top:18px;">BELLA FRA!</div>
         oltre che saluto, si fa riconoscimento di una vita bella e santa, quella di San Francesco,
         da cui desideriamo imparare l'arte di sognare con Dio, di essere fratelli e sorelle con tutti
         perché figli dello stesso Padre, di praticare la pace con uno stile povero e disarmato
         di fronte agli altri e di lodare Dio in ogni cosa.
-        <div class="tema-titolo" style="margin-top:16px;">BELLA FRA!</div>
+        <div class="tema-titolo" style="margin-top:18px;">BELLA FRA!</div>
         è un augurio per i nostri Cre-Grest perché guardandoci,
         chiunque possa vederci raggianti e capaci di essere Luce di Dio nel mondo.
       </div>
@@ -312,9 +308,9 @@
       <p class="gita-avviso">Ogni settimana è prevista una gita in esterno.</p>
     </div>
 
-    <div style="background:var(--blu-pallido);border-left:4px solid var(--arancio);border-radius:var(--raggio-sm);padding:14px 18px;margin-bottom:22px;font-size:16px;">
+    <div style="background:var(--blu-pallido);border-left:4px solid var(--arancio);border-radius:var(--raggio-sm);padding:16px 18px;margin-bottom:22px;font-size:17px;">
       💰 Quota: <strong>€20,00 a settimana</strong><br>
-      <span style="font-size:14px;color:var(--testo-sec);">Dal terzo figlio della stessa famiglia il costo è di <strong>€10,00 a settimana</strong>.<br>
+      <span style="font-size:15px;color:var(--testo-sec);">Dal terzo figlio della stessa famiglia il costo è di <strong>€10,00 a settimana</strong>.<br>
       L'eventuale costo relativo alle gite (pullman, ingresso) è a parte.</span>
     </div>
 
@@ -402,8 +398,8 @@
         <div class="msg-errore" id="errTessera"></div>
       </div>
       <div class="field-group">
-        <label>Tessera ANSPI *</label>
-        <select id="tesseraANSPI">
+        <label>Stato tesseramento ANSPI *</label>
+        <select id="tesseraANSPI" onchange="aggiornaTesseraANSPI()">
           <option value="">Seleziona...</option>
           <option value="Già tesserato">Già tesserato</option>
           <option value="Da tesserare">Da tesserare</option>
@@ -411,6 +407,11 @@
         </select>
         <div class="msg-errore" id="errTesseraANSPI"></div>
       </div>
+    </div>
+    <div class="field-group" id="bloccoAltroOratorio" style="display:none;">
+      <label>Indica quale oratorio *</label>
+      <input type="text" id="altroOratorio" placeholder="es. Oratorio di Mantova">
+      <div class="msg-errore" id="errAltroOratorio"></div>
     </div>
     <div class="row-2">
       <div class="field-group">
@@ -488,13 +489,13 @@
       <div class="gita-desc">Gita in bicicletta sul territorio. Abbigliamento comodo consigliato.</div>
       <div class="gita-costo">Inclusa nella quota</div>
       <div class="gita-radio-group">
-        <label class="gita-radio-opt opt-si">
+        <label class="gita-radio-opt">
           <input type="radio" name="gita1" value="Sì" onchange="aggiornaGitaCard('gitaCard1','gita1')"> Sì, parteciperà
         </label>
-        <label class="gita-radio-opt opt-forse">
+        <label class="gita-radio-opt">
           <input type="radio" name="gita1" value="Forse" onchange="aggiornaGitaCard('gitaCard1','gita1')"> Forse parteciperà
         </label>
-        <label class="gita-radio-opt opt-no">
+        <label class="gita-radio-opt">
           <input type="radio" name="gita1" value="No" onchange="aggiornaGitaCard('gitaCard1','gita1')"> No, non parteciperà
         </label>
       </div>
@@ -505,13 +506,13 @@
       <div class="gita-desc">Destinazione e programma saranno comunicati quanto prima. È previsto un contributo aggiuntivo per il trasporto.</div>
       <div class="gita-costo">Costo da definire</div>
       <div class="gita-radio-group">
-        <label class="gita-radio-opt opt-si">
+        <label class="gita-radio-opt">
           <input type="radio" name="gita2" value="Sì" onchange="aggiornaGitaCard('gitaCard2','gita2')"> Sì, parteciperà
         </label>
-        <label class="gita-radio-opt opt-forse">
+        <label class="gita-radio-opt">
           <input type="radio" name="gita2" value="Forse" onchange="aggiornaGitaCard('gitaCard2','gita2')"> Forse parteciperà
         </label>
-        <label class="gita-radio-opt opt-no">
+        <label class="gita-radio-opt">
           <input type="radio" name="gita2" value="No" onchange="aggiornaGitaCard('gitaCard2','gita2')"> No, non parteciperà
         </label>
       </div>
@@ -537,7 +538,7 @@
     <div class="card-titolo" id="titoloStep4">Dati dei Genitori</div>
     <div class="card-sottotitolo" id="sottotitoloStep4">Inserisci i dati del genitore/tutore/affidatario.</div>
 
-    <div class="sezione-label"><div class="sezione-icona" id="iconaStep4">1</div><span id="etichettaStep4">Genitore / Tutore / Affidatario</span></div>
+    <div class="sezione-label"><div class="sezione-icona">1</div><span id="etichettaStep4">Genitore / Tutore / Affidatario</span></div>
     <div class="row-2">
       <div class="field-group">
         <label>Cognome *</label>
@@ -563,7 +564,6 @@
       </div>
     </div>
 
-    <!-- Solo per minorenni -->
     <div id="bloccoG2Wrapper">
       <label class="toggle-g2">
         <input type="checkbox" id="toggleG2" onchange="toggleGenitore2()">
@@ -592,7 +592,7 @@
 
     <div class="clausola" id="cl1">
       <div class="clausola-testo">
-        <strong id="testoComportamenti">Comportamenti inammissibili</strong>
+        <strong>Comportamenti inammissibili</strong>
         <span id="corpoComportamenti">Autorizzo gli organizzatori ad interrompere la partecipazione di nostro/a figlio/a alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.</span>
       </div>
       <label class="check-wrap">
@@ -600,6 +600,18 @@
         <span>Accetto e autorizzo</span>
       </label>
       <div class="msg-errore" id="errComportamenti"></div>
+    </div>
+
+    <div class="clausola" id="cl2">
+      <div class="clausola-testo">
+        <strong>Interventi di carattere sanitario</strong>
+        Autorizzo gli organizzatori, in caso di necessità, a chiedere l'intervento del Servizio Sanitario e/o accompagnare il/la ragazzo/a presso il Pronto Soccorso (contemporaneamente i responsabili e i loro collaboratori si attiveranno per avvisare almeno un genitore utilizzando il numero di telefono di reperibilità) e al successivo riaffidamento del ragazzo/ragazza agli organizzatori, nella persona del Responsabile dell'Oratorio e dei suoi collaboratori.
+      </div>
+      <label class="check-wrap">
+        <input type="checkbox" id="chkSanitario" onchange="aggiornaCl('cl2',this)">
+        <span>Accetto e autorizzo</span>
+      </label>
+      <div class="msg-errore" id="errSanitario"></div>
     </div>
 
     <div class="clausola" id="cl3">
@@ -696,12 +708,12 @@
         <li style="margin-top:8px;"><strong>In contanti</strong> il primo giorno di attività</li>
       </ul>
     </div>
-    <div class="info-box">
+    <div class="info-box" id="boxTesseramento" style="display:none;">
       <h3>Tesseramento ANSPI</h3>
       <p>Per partecipare è necessario essere tesserati ANSPI. Se non l'hai ancora fatto, puoi richiedere la tessera compilando il <a href="https://tally.so/r/WOR6ve" target="_blank">modulo di tesseramento</a>.</p>
     </div>
     <div class="info-box" style="text-align:center;">
-      <p style="font-size:14px;">Per informazioni: <a href="mailto:oratoriocastellucchio5@gmail.com">oratoriocastellucchio5@gmail.com</a><br>Tel. 0376 438106 &nbsp;|&nbsp; Via Roma 29, Castellucchio MN</p>
+      <p style="font-size:15px;">Per informazioni: <a href="mailto:oratoriocastellucchio5@gmail.com">oratoriocastellucchio5@gmail.com</a><br>Tel. 0376 438106 &nbsp;|&nbsp; Via Roma 29, Castellucchio MN</p>
     </div>
   </div>
 
@@ -804,17 +816,16 @@ async function cercaCF() {
     document.getElementById("costoSett1").textContent = ruolo === "PAR" ? "€20,00" : "Gratuita";
     document.getElementById("costoSett2").textContent = ruolo === "PAR" ? "€20,00" : "Gratuita";
 
-    // Adatta step 4
     if (isMagg) {
       document.getElementById("titoloStep4").textContent = "Dati di contatto";
       document.getElementById("sottotitoloStep4").textContent = "Inserisci i tuoi dati di contatto.";
-      document.getElementById("etichettaStep4").textContent = "1 – Animatore";
+      document.getElementById("etichettaStep4").textContent = "Animatore";
       document.getElementById("bloccoG2Wrapper").style.display = "none";
       document.getElementById("labelFirmaG1").textContent = "Firma del partecipante *";
       document.getElementById("notaFirma").style.display = "none";
       document.getElementById("firmaG2Wrap").style.display = "none";
-      // Testo autorizzazioni in prima persona per maggiorenni/animatori
       document.getElementById("corpoComportamenti").textContent = "Autorizzo gli organizzatori ad interrompere la mia partecipazione alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.";
+      document.getElementById("cl2").style.display = "none";
     } else {
       document.getElementById("titoloStep4").textContent = "Dati dei Genitori";
       document.getElementById("sottotitoloStep4").textContent = "Inserisci i dati del genitore/tutore/affidatario.";
@@ -823,6 +834,7 @@ async function cercaCF() {
       document.getElementById("labelFirmaG1").textContent = "Firma Genitore / Tutore / Affidatario *";
       document.getElementById("notaFirma").style.display = "block";
       document.getElementById("corpoComportamenti").textContent = "Autorizzo gli organizzatori ad interrompere la partecipazione di nostro/a figlio/a alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.";
+      document.getElementById("cl2").style.display = "block";
     }
 
     if (data.ok && data.trovato) {
@@ -846,7 +858,6 @@ function precompila(d) {
   set("indirizzo",d.indirizzo); set("localita",d.localita); set("cap",d.cap); set("provincia",d.provincia);
 
   if (statoIscrizione.isMagg) {
-    // Per maggiorenni, precompila i campi contatto con i propri dati
     set("cognomeG1", d.cognome);
     set("nomeG1", d.nome);
     set("cellG1", d.cell);
@@ -882,14 +893,18 @@ function precompila(d) {
   }
 }
 
-// ── SETTIMANE ─────────────────────────────────────────────────
+function aggiornaTesseraANSPI() {
+  const val = document.getElementById("tesseraANSPI").value;
+  document.getElementById("bloccoAltroOratorio").style.display =
+    val === "Tesserato in un altro oratorio" ? "block" : "none";
+}
+
 function toggleSett(id, optId) {
   const opt = document.getElementById(optId);
   const cb  = document.getElementById(id);
   opt.classList.toggle("selezionata", cb.checked);
 }
 
-// ── GITE ─────────────────────────────────────────────────────
 function aggiornaGitaCard(cardId, name) {
   const val  = document.querySelector(`input[name="${name}"]:checked`)?.value;
   const card = document.getElementById(cardId);
@@ -899,7 +914,6 @@ function aggiornaGitaCard(cardId, name) {
   if (val === "No")    card.classList.add("selezionata-no");
 }
 
-// ── RIEPILOGO COSTO ───────────────────────────────────────────
 function aggiornaRiepilogoCosto() {
   const isPAR = statoIscrizione.ruolo === "PAR";
   const s1 = document.getElementById("sett1").checked;
@@ -927,7 +941,6 @@ function toggleGenitore2() {
   document.getElementById("firmaG2Wrap").style.display = (m && !statoIscrizione.isMagg) ? "block" : "none";
 }
 
-// ── VALIDAZIONI ──────────────────────────────────────────────
 function validaStep1() {
   const cf = document.getElementById("cfInput").value.trim().toUpperCase();
   const er = document.getElementById("errCF");
@@ -962,6 +975,12 @@ function validaStep2() {
   const tANSPI = document.getElementById("tesseraANSPI").value;
   const errTA = document.getElementById("errTesseraANSPI");
   if (!tANSPI) { errTA.textContent = "Campo obbligatorio"; ok = false; } else errTA.textContent = "";
+
+  if (tANSPI === "Tesserato in un altro oratorio") {
+    const altro = document.getElementById("altroOratorio").value.trim();
+    const errAO = document.getElementById("errAltroOratorio");
+    if (!altro) { errAO.textContent = "Indica l'oratorio"; ok = false; } else errAO.textContent = "";
+  }
 
   const ua = document.getElementById("uscitaAutonoma").value;
   const errUA = document.getElementById("errUscitaAutonoma");
@@ -1001,6 +1020,12 @@ function validaStep5() {
     const el=document.getElementById(id), er=document.getElementById(err);
     if (!el.checked) { er.textContent="Autorizzazione obbligatoria"; ok=false; } else er.textContent="";
   });
+
+  if (!statoIscrizione.isMagg) {
+    const elS=document.getElementById("chkSanitario"), erS=document.getElementById("errSanitario");
+    if (!elS.checked) { erS.textContent="Autorizzazione obbligatoria"; ok=false; } else erS.textContent="";
+  }
+
   const foto=document.querySelector('input[name="consensoFoto"]:checked'), erF=document.getElementById("errFoto");
   if (!foto) { erF.textContent="Seleziona un'opzione"; ok=false; } else erF.textContent="";
   if (ok) vaiStep(6);
@@ -1051,9 +1076,10 @@ async function inviaIscrizione() {
   const isPAR = statoIscrizione.ruolo === "PAR";
   const quota = isPAR ? ((s1?20:0)+(s2?20:0)) : 0;
   const settimane = [s1?"Settimana 1 (24–28 ago)":"", s2?"Settimana 2 (31 ago–4 set)":""].filter(Boolean).join(", ");
-  const gita1Val = document.querySelector('input[name="gita1"]:checked')?.value || "Non indicato";
-  const gita2Val = document.querySelector('input[name="gita2"]:checked')?.value || "Non indicato";
-  const gite = `Biciclettata 28/08: ${gita1Val} | Gita 03/09: ${gita2Val}`;
+  const gita1Val = document.querySelector('input[name="gita1"]:checked')?.value || "";
+  const gita2Val = document.querySelector('input[name="gita2"]:checked')?.value || "";
+  const gite = `Biciclettata 28/08: ${gita1Val || "Non indicato"} | Gita 03/09: ${gita2Val || "Non indicato"}`;
+  const tesseraANSPIVal = document.getElementById("tesseraANSPI").value;
 
   const payload = {
     azione:"salvaIscrizione",
@@ -1070,12 +1096,17 @@ async function inviaIscrizione() {
       cap:              document.getElementById("cap").value.trim(),
       provincia:        document.getElementById("provincia").value.trim(),
       tessera:          document.getElementById("tessera").value.trim(),
-      tesseraANSPI:     document.getElementById("tesseraANSPI").value,
+      tesseraANSPI:     tesseraANSPIVal,
+      altroOratorio:    document.getElementById("altroOratorio").value.trim(),
       uscitaAutonoma:   document.getElementById("uscitaAutonoma").value,
       note:             document.getElementById("note").value.trim(),
       ruolo:            statoIscrizione.ruolo,
       stato:            statoIscrizione.isMagg ? "Maggiorenne" : "Minorenne",
       settimane, gite, quota,
+      sett1: s1 ? "Sì" : "No",
+      sett2: s2 ? "Sì" : "No",
+      gita1: gita1Val,
+      gita2: gita2Val,
       cognomeG1:        document.getElementById("cognomeG1").value.trim(),
       nomeG1:           document.getElementById("nomeG1").value.trim(),
       cellG1:           document.getElementById("cellG1").value.trim(),
@@ -1083,6 +1114,7 @@ async function inviaIscrizione() {
       nomeG2:           hasG2 ? document.getElementById("nomeG2").value.trim() : "",
       cellG2:           hasG2 ? document.getElementById("cellG2").value.trim() : "",
       checkComportamenti: document.getElementById("chkComportamenti").checked,
+      checkSanitario:     statoIscrizione.isMagg ? "" : document.getElementById("chkSanitario").checked,
       checkPrivacyLetta:  document.getElementById("chkPrivacy").checked,
       consensoFoto,
       firmaG1: document.getElementById("canvasG1").toDataURL("image/png"),
@@ -1098,6 +1130,7 @@ async function inviaIscrizione() {
       document.getElementById("causaleConferma").textContent=`Grest 2026 ${payload.dati.cognome} ${payload.dati.nome}`;
       document.getElementById("quotaConferma").textContent = quota > 0 ? `€${quota},00` : "Gratuita";
       if (quota === 0) document.getElementById("boxPagamento").style.display = "none";
+      if (tesseraANSPIVal === "Da tesserare") document.getElementById("boxTesseramento").style.display = "block";
       document.getElementById("progressBar").style.display="none";
       vaiStep(7);
     } else {
