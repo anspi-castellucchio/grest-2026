@@ -71,7 +71,7 @@
     color: var(--bianco); border-radius: var(--raggio);
     padding: 24px; margin-bottom: 20px; text-align: center;
   }
-  .badge-evento img.logo-grest { height: 170px; display: block; margin: 0 auto 16px; max-width:100%; }
+  .badge-evento img.logo-grest { height: 220px; display: block; margin: 0 auto 18px; max-width:100%; }
   .badge-evento h1 { font-family:'Nunito',sans-serif; font-size:30px; font-weight:900; margin-bottom:4px; }
   .badge-evento .date { font-size:19px; opacity:0.92; margin-bottom:4px; }
   .badge-evento .target { font-size:15px; opacity:0.82; margin-bottom:16px; }
@@ -244,7 +244,7 @@
     .gita-radio-group { flex-direction:column; }
     .gita-radio-opt { width:100%; }
     .badge-evento h1 { font-size:25px; }
-    .badge-evento img.logo-grest { height:140px; }
+    .badge-evento img.logo-grest { height:180px; }
   }
 </style>
 </head>
@@ -311,7 +311,8 @@
     <div style="background:var(--blu-pallido);border-left:4px solid var(--arancio);border-radius:var(--raggio-sm);padding:16px 18px;margin-bottom:22px;font-size:17px;">
       💰 Quota: <strong>€20,00 a settimana</strong><br>
       <span style="font-size:15px;color:var(--testo-sec);">Dal terzo figlio della stessa famiglia il costo è di <strong>€10,00 a settimana</strong>.<br>
-      L'eventuale costo relativo alle gite (pullman, ingresso) è a parte.</span>
+      L'eventuale costo relativo alle gite (pullman, ingresso) è a parte.<br><br>
+      Per partecipare è necessario essere tesserati ANSPI per il 2026. Il costo è di <strong>€10,00</strong>, salvo sconti pacchetto Family. Riceverai nella mail di conferma le eventuali istruzioni per procedere con la richiesta di tesseramento.</span>
     </div>
 
     <div class="btn-wrap" style="justify-content:flex-end;">
@@ -344,7 +345,7 @@
   <!-- STEP 2: DATI PARTECIPANTE -->
   <div id="step2" class="card" style="display:none;">
     <div class="card-titolo">Dati del Partecipante</div>
-    <div class="card-sottotitolo">Verifica e completa i dati del/la ragazzo/a.</div>
+    <div class="card-sottotitolo" id="sottotitoloStep2">Verifica e completa i dati del/la ragazzo/a.</div>
     <div class="row-2">
       <div class="field-group">
         <label>Cognome *</label>
@@ -387,7 +388,7 @@
         <div class="msg-errore" id="errLuogoNasc"></div>
       </div>
       <div class="field-group">
-        <label>Cellulare partecipante (facoltativo)</label>
+        <label id="labelCellPart">Cellulare partecipante (facoltativo)</label>
         <input type="tel" id="cellPartecipante" placeholder="+39 348 0000000">
       </div>
     </div>
@@ -459,7 +460,7 @@
   <!-- STEP 3: SETTIMANE E GITE -->
   <div id="step3" class="card" style="display:none;">
     <div class="card-titolo">Settimane e Gite</div>
-    <div class="card-sottotitolo">Seleziona le settimane di partecipazione e indica la disponibilità per le gite.</div>
+    <div class="card-sottotitolo" id="sottotitoloStep3">Seleziona le settimane di partecipazione e indica la disponibilità per le gite.</div>
 
     <div class="sezione-label"><div class="sezione-icona">1</div>Settimane</div>
 
@@ -490,13 +491,13 @@
       <div class="gita-costo">Inclusa nella quota</div>
       <div class="gita-radio-group">
         <label class="gita-radio-opt">
-          <input type="radio" name="gita1" value="Sì" onchange="aggiornaGitaCard('gitaCard1','gita1')"> Sì, parteciperà
+          <input type="radio" name="gita1" value="Sì" onchange="aggiornaGitaCard('gitaCard1','gita1')"> <span class="lbl-si">Sì, parteciperà</span>
         </label>
         <label class="gita-radio-opt">
-          <input type="radio" name="gita1" value="Forse" onchange="aggiornaGitaCard('gitaCard1','gita1')"> Forse parteciperà
+          <input type="radio" name="gita1" value="Forse" onchange="aggiornaGitaCard('gitaCard1','gita1')"> <span class="lbl-forse">Forse parteciperà</span>
         </label>
         <label class="gita-radio-opt">
-          <input type="radio" name="gita1" value="No" onchange="aggiornaGitaCard('gitaCard1','gita1')"> No, non parteciperà
+          <input type="radio" name="gita1" value="No" onchange="aggiornaGitaCard('gitaCard1','gita1')"> <span class="lbl-no">No, non parteciperà</span>
         </label>
       </div>
     </div>
@@ -507,13 +508,13 @@
       <div class="gita-costo">Costo da definire</div>
       <div class="gita-radio-group">
         <label class="gita-radio-opt">
-          <input type="radio" name="gita2" value="Sì" onchange="aggiornaGitaCard('gitaCard2','gita2')"> Sì, parteciperà
+          <input type="radio" name="gita2" value="Sì" onchange="aggiornaGitaCard('gitaCard2','gita2')"> <span class="lbl-si">Sì, parteciperà</span>
         </label>
         <label class="gita-radio-opt">
-          <input type="radio" name="gita2" value="Forse" onchange="aggiornaGitaCard('gitaCard2','gita2')"> Forse parteciperà
+          <input type="radio" name="gita2" value="Forse" onchange="aggiornaGitaCard('gitaCard2','gita2')"> <span class="lbl-forse">Forse parteciperà</span>
         </label>
         <label class="gita-radio-opt">
-          <input type="radio" name="gita2" value="No" onchange="aggiornaGitaCard('gitaCard2','gita2')"> No, non parteciperà
+          <input type="radio" name="gita2" value="No" onchange="aggiornaGitaCard('gitaCard2','gita2')"> <span class="lbl-no">No, non parteciperà</span>
         </label>
       </div>
     </div>
@@ -617,11 +618,11 @@
     <div class="clausola" id="cl3">
       <div class="clausola-testo">
         <strong>Informativa ai fini privacy e riservatezza</strong>
-        Dichiariamo di aver letto l'<a href="ANSPI-_-informativa-privacy.pdf" target="_blank">Informativa ai fini privacy</a> secondo quanto previsto dal Regolamento UE 679/2016.
+        <span id="corpoPrivacy">Dichiariamo di aver letto l'<a href="ANSPI-_-informativa-privacy.pdf" target="_blank">Informativa ai fini privacy</a> secondo quanto previsto dal Regolamento UE 679/2016.</span>
       </div>
       <label class="check-wrap">
         <input type="checkbox" id="chkPrivacy" onchange="aggiornaCl('cl3',this)">
-        <span>Dichiariamo di aver letto l'informativa ai fini privacy</span>
+        <span id="labelPrivacy">Dichiariamo di aver letto l'informativa ai fini privacy</span>
       </label>
       <div class="msg-errore" id="errPrivacy"></div>
     </div>
@@ -633,12 +634,12 @@
       </div>
       <div class="radio-group">
         <label class="radio-opt">
-          <input type="radio" name="consensoFoto" value="Sì, prestiamo il consenso al trattamento di foto e video secondo quanto descritto dall'Informativa privacy">
-          <span>Sì, prestiamo il consenso al trattamento di foto e video</span>
+          <input type="radio" name="consensoFoto" value="Sì, presto il consenso al trattamento di foto e video secondo quanto descritto dall'Informativa privacy">
+          <span id="labelFotoSi">Sì, prestiamo il consenso al trattamento di foto e video</span>
         </label>
         <label class="radio-opt">
-          <input type="radio" name="consensoFoto" value="No, neghiamo il consenso al trattamento di foto e video secondo quanto descritto dall'Informativa privacy">
-          <span>No, neghiamo il consenso al trattamento di foto e video</span>
+          <input type="radio" name="consensoFoto" value="No, nego il consenso al trattamento di foto e video secondo quanto descritto dall'Informativa privacy">
+          <span id="labelFotoNo">No, neghiamo il consenso al trattamento di foto e video</span>
         </label>
       </div>
       <div class="msg-errore" id="errFoto"></div>
@@ -780,6 +781,57 @@ function ruoloDaCF(cf) {
   return anno <= 2011 ? "ANI" : "PAR";
 }
 
+// ── Adatta i testi in base a maggiorenne/minorenne ───────────
+function adattaTesti(isMagg) {
+  const T = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
+
+  if (isMagg) {
+    // Step 2
+    T("sottotitoloStep2", "Verifica e completa i tuoi dati.");
+    T("labelCellPart", "Il tuo cellulare (facoltativo)");
+    // Step 3
+    T("sottotitoloStep3", "Seleziona le settimane a cui parteciperai e indica la tua disponibilità per le gite.");
+    document.querySelectorAll(".lbl-si").forEach(e => e.textContent = "Sì, parteciperò");
+    document.querySelectorAll(".lbl-forse").forEach(e => e.textContent = "Forse parteciperò");
+    document.querySelectorAll(".lbl-no").forEach(e => e.textContent = "No, non parteciperò");
+    // Step 4
+    T("titoloStep4", "Dati di contatto");
+    T("sottotitoloStep4", "Inserisci i tuoi dati di contatto.");
+    T("etichettaStep4", "Animatore");
+    document.getElementById("bloccoG2Wrapper").style.display = "none";
+    // Step 5
+    T("corpoComportamenti", "Autorizzo gli organizzatori ad interrompere la mia partecipazione alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.");
+    document.getElementById("cl2").style.display = "none";
+    document.getElementById("corpoPrivacy").innerHTML = "Dichiaro di aver letto l'<a href=\"ANSPI-_-informativa-privacy.pdf\" target=\"_blank\">Informativa ai fini privacy</a> secondo quanto previsto dal Regolamento UE 679/2016.";
+    T("labelPrivacy", "Dichiaro di aver letto l'informativa ai fini privacy");
+    T("labelFotoSi", "Sì, presto il consenso al trattamento di foto e video");
+    T("labelFotoNo", "No, nego il consenso al trattamento di foto e video");
+    // Step 6
+    T("labelFirmaG1", "La tua firma *");
+    document.getElementById("notaFirma").style.display = "none";
+    document.getElementById("firmaG2Wrap").style.display = "none";
+  } else {
+    T("sottotitoloStep2", "Verifica e completa i dati del/la ragazzo/a.");
+    T("labelCellPart", "Cellulare partecipante (facoltativo)");
+    T("sottotitoloStep3", "Seleziona le settimane di partecipazione e indica la disponibilità per le gite.");
+    document.querySelectorAll(".lbl-si").forEach(e => e.textContent = "Sì, parteciperà");
+    document.querySelectorAll(".lbl-forse").forEach(e => e.textContent = "Forse parteciperà");
+    document.querySelectorAll(".lbl-no").forEach(e => e.textContent = "No, non parteciperà");
+    T("titoloStep4", "Dati dei Genitori");
+    T("sottotitoloStep4", "Inserisci i dati del genitore/tutore/affidatario.");
+    T("etichettaStep4", "Genitore / Tutore / Affidatario");
+    document.getElementById("bloccoG2Wrapper").style.display = "block";
+    T("corpoComportamenti", "Autorizzo gli organizzatori ad interrompere la partecipazione di nostro/a figlio/a alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.");
+    document.getElementById("cl2").style.display = "block";
+    document.getElementById("corpoPrivacy").innerHTML = "Dichiariamo di aver letto l'<a href=\"ANSPI-_-informativa-privacy.pdf\" target=\"_blank\">Informativa ai fini privacy</a> secondo quanto previsto dal Regolamento UE 679/2016.";
+    T("labelPrivacy", "Dichiariamo di aver letto l'informativa ai fini privacy");
+    T("labelFotoSi", "Sì, prestiamo il consenso al trattamento di foto e video");
+    T("labelFotoNo", "No, neghiamo il consenso al trattamento di foto e video");
+    T("labelFirmaG1", "Firma Genitore / Tutore / Affidatario *");
+    document.getElementById("notaFirma").style.display = "block";
+  }
+}
+
 async function cercaCF() {
   const cf = document.getElementById("cfInput").value.trim().toUpperCase();
   document.getElementById("errCF").textContent = "";
@@ -816,26 +868,7 @@ async function cercaCF() {
     document.getElementById("costoSett1").textContent = ruolo === "PAR" ? "€20,00" : "Gratuita";
     document.getElementById("costoSett2").textContent = ruolo === "PAR" ? "€20,00" : "Gratuita";
 
-    if (isMagg) {
-      document.getElementById("titoloStep4").textContent = "Dati di contatto";
-      document.getElementById("sottotitoloStep4").textContent = "Inserisci i tuoi dati di contatto.";
-      document.getElementById("etichettaStep4").textContent = "Animatore";
-      document.getElementById("bloccoG2Wrapper").style.display = "none";
-      document.getElementById("labelFirmaG1").textContent = "Firma del partecipante *";
-      document.getElementById("notaFirma").style.display = "none";
-      document.getElementById("firmaG2Wrap").style.display = "none";
-      document.getElementById("corpoComportamenti").textContent = "Autorizzo gli organizzatori ad interrompere la mia partecipazione alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.";
-      document.getElementById("cl2").style.display = "none";
-    } else {
-      document.getElementById("titoloStep4").textContent = "Dati dei Genitori";
-      document.getElementById("sottotitoloStep4").textContent = "Inserisci i dati del genitore/tutore/affidatario.";
-      document.getElementById("etichettaStep4").textContent = "Genitore / Tutore / Affidatario";
-      document.getElementById("bloccoG2Wrapper").style.display = "block";
-      document.getElementById("labelFirmaG1").textContent = "Firma Genitore / Tutore / Affidatario *";
-      document.getElementById("notaFirma").style.display = "block";
-      document.getElementById("corpoComportamenti").textContent = "Autorizzo gli organizzatori ad interrompere la partecipazione di nostro/a figlio/a alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.";
-      document.getElementById("cl2").style.display = "block";
-    }
+    adattaTesti(isMagg);
 
     if (data.ok && data.trovato) {
       precompila(data.dati);
@@ -1078,7 +1111,6 @@ async function inviaIscrizione() {
   const settimane = [s1?"Settimana 1 (24–28 ago)":"", s2?"Settimana 2 (31 ago–4 set)":""].filter(Boolean).join(", ");
   const gita1Val = document.querySelector('input[name="gita1"]:checked')?.value || "";
   const gita2Val = document.querySelector('input[name="gita2"]:checked')?.value || "";
-  const gite = `Biciclettata 28/08: ${gita1Val || "Non indicato"} | Gita 03/09: ${gita2Val || "Non indicato"}`;
   const tesseraANSPIVal = document.getElementById("tesseraANSPI").value;
 
   const payload = {
@@ -1102,7 +1134,7 @@ async function inviaIscrizione() {
       note:             document.getElementById("note").value.trim(),
       ruolo:            statoIscrizione.ruolo,
       stato:            statoIscrizione.isMagg ? "Maggiorenne" : "Minorenne",
-      settimane, gite, quota,
+      settimane, quota,
       sett1: s1 ? "Sì" : "No",
       sett2: s2 ? "Sì" : "No",
       gita1: gita1Val,
