@@ -3,7 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grest 2026 – Iscrizione</title>
+<title>Grest Castellucchio 2026 – Iscrizione</title>
+
+<meta property="og:title" content="Grest Castellucchio 2026 – Iscrizione">
+<meta property="og:description" content="BELLA FRA! Iscrizioni aperte dal 24 agosto al 4 settembre. Per ragazzi dalla 1ª materna alla 3ª media.">
+<meta property="og:image" content="https://anspi-castellucchio.github.io/grest-2026/og-preview.png">
+<meta property="og:url" content="https://anspi-castellucchio.github.io/grest-2026/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -415,7 +423,7 @@
       <div class="msg-errore" id="errAltroOratorio"></div>
     </div>
     <div class="row-2">
-      <div class="field-group">
+      <div class="field-group" id="bloccoUscitaAutonoma">
         <label>Uscita autonoma *</label>
         <select id="uscitaAutonoma">
           <option value="">Seleziona...</option>
@@ -711,7 +719,7 @@
     </div>
     <div class="info-box" id="boxTesseramento" style="display:none;">
       <h3>Tesseramento ANSPI</h3>
-      <p>Per partecipare è necessario essere tesserati ANSPI. Se non l'hai ancora fatto, puoi richiedere la tessera compilando il <a href="https://tally.so/r/WOR6ve" target="_blank">modulo di tesseramento</a>.</p>
+      <p>Per partecipare è necessario essere tesserati ANSPI per il 2026. Il costo è di <strong>€10,00</strong>, salvo sconti pacchetto Family. Puoi richiedere la tessera compilando il <a href="https://tally.so/r/WOR6ve" target="_blank">modulo di tesseramento</a>.</p>
     </div>
     <div class="info-box" style="text-align:center;">
       <p style="font-size:15px;">Per informazioni: <a href="mailto:oratoriocastellucchio5@gmail.com">oratoriocastellucchio5@gmail.com</a><br>Tel. 0376 438106 &nbsp;|&nbsp; Via Roma 29, Castellucchio MN</p>
@@ -781,38 +789,35 @@ function ruoloDaCF(cf) {
   return anno <= 2011 ? "ANI" : "PAR";
 }
 
-// ── Adatta i testi in base a maggiorenne/minorenne ───────────
+// ── Adatta testi e campi in base a maggiorenne/minorenne ─────
 function adattaTesti(isMagg) {
   const T = (id, txt) => { const el = document.getElementById(id); if (el) el.textContent = txt; };
 
   if (isMagg) {
-    // Step 2
     T("sottotitoloStep2", "Verifica e completa i tuoi dati.");
     T("labelCellPart", "Il tuo cellulare (facoltativo)");
-    // Step 3
+    document.getElementById("bloccoUscitaAutonoma").style.display = "none";
     T("sottotitoloStep3", "Seleziona le settimane a cui parteciperai e indica la tua disponibilità per le gite.");
     document.querySelectorAll(".lbl-si").forEach(e => e.textContent = "Sì, parteciperò");
     document.querySelectorAll(".lbl-forse").forEach(e => e.textContent = "Forse parteciperò");
     document.querySelectorAll(".lbl-no").forEach(e => e.textContent = "No, non parteciperò");
-    // Step 4
     T("titoloStep4", "Dati di contatto");
     T("sottotitoloStep4", "Inserisci i tuoi dati di contatto.");
     T("etichettaStep4", "Animatore");
     document.getElementById("bloccoG2Wrapper").style.display = "none";
-    // Step 5
     T("corpoComportamenti", "Autorizzo gli organizzatori ad interrompere la mia partecipazione alla suddetta proposta qualora questo provvedimento sia ritenuto necessario per custodire il significato educativo dell'attività e degli spazi o per evitare che siano ripetuti comportamenti inammissibili.");
     document.getElementById("cl2").style.display = "none";
     document.getElementById("corpoPrivacy").innerHTML = "Dichiaro di aver letto l'<a href=\"ANSPI-_-informativa-privacy.pdf\" target=\"_blank\">Informativa ai fini privacy</a> secondo quanto previsto dal Regolamento UE 679/2016.";
     T("labelPrivacy", "Dichiaro di aver letto l'informativa ai fini privacy");
     T("labelFotoSi", "Sì, presto il consenso al trattamento di foto e video");
     T("labelFotoNo", "No, nego il consenso al trattamento di foto e video");
-    // Step 6
     T("labelFirmaG1", "La tua firma *");
     document.getElementById("notaFirma").style.display = "none";
     document.getElementById("firmaG2Wrap").style.display = "none";
   } else {
     T("sottotitoloStep2", "Verifica e completa i dati del/la ragazzo/a.");
     T("labelCellPart", "Cellulare partecipante (facoltativo)");
+    document.getElementById("bloccoUscitaAutonoma").style.display = "block";
     T("sottotitoloStep3", "Seleziona le settimane di partecipazione e indica la disponibilità per le gite.");
     document.querySelectorAll(".lbl-si").forEach(e => e.textContent = "Sì, parteciperà");
     document.querySelectorAll(".lbl-forse").forEach(e => e.textContent = "Forse parteciperà");
@@ -1015,9 +1020,12 @@ function validaStep2() {
     if (!altro) { errAO.textContent = "Indica l'oratorio"; ok = false; } else errAO.textContent = "";
   }
 
-  const ua = document.getElementById("uscitaAutonoma").value;
-  const errUA = document.getElementById("errUscitaAutonoma");
-  if (!ua) { errUA.textContent = "Campo obbligatorio"; ok = false; } else errUA.textContent = "";
+  // Uscita autonoma: obbligatoria solo per i minorenni
+  if (!statoIscrizione.isMagg) {
+    const ua = document.getElementById("uscitaAutonoma").value;
+    const errUA = document.getElementById("errUscitaAutonoma");
+    if (!ua) { errUA.textContent = "Campo obbligatorio"; ok = false; } else errUA.textContent = "";
+  }
 
   const g=document.getElementById("nascGiorno").value, m=document.getElementById("nascMese").value, a=document.getElementById("nascAnno").value;
   const erD=document.getElementById("errDataNasc");
@@ -1130,7 +1138,7 @@ async function inviaIscrizione() {
       tessera:          document.getElementById("tessera").value.trim(),
       tesseraANSPI:     tesseraANSPIVal,
       altroOratorio:    document.getElementById("altroOratorio").value.trim(),
-      uscitaAutonoma:   document.getElementById("uscitaAutonoma").value,
+      uscitaAutonoma:   statoIscrizione.isMagg ? "" : document.getElementById("uscitaAutonoma").value,
       note:             document.getElementById("note").value.trim(),
       ruolo:            statoIscrizione.ruolo,
       stato:            statoIscrizione.isMagg ? "Maggiorenne" : "Minorenne",
